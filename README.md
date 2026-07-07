@@ -73,7 +73,7 @@ flowchart TD
 Aplikasi ini mengimplementasikan prinsip dasar OOP untuk mempermudah pengembangan dan pemeliharaan kode. Berikut adalah rincian per baris kodenya di dalam file `04_docs/TodoApp.java` beserta kaitannya dengan hasil kompilasi:
 
 ### 1. Encapsulation (Pengkapsulan)
-**Posisi di Kode: Baris ke-24 s.d. 28 (Di dalam `class Task`)**
+**Posisi di Kode: Baris ke-24 s.d. 31 (Di dalam `class Task`)**
 ```java
 // [OOP CONCEPT: ENCAPSULATION]
 private final int id;
@@ -86,7 +86,7 @@ Semua atribut atau data pembentuk tugas dilindungi dengan modifier `private`. In
 *Kaitan dengan file kompilasi:* Kelas ini dikompilasi berdiri sendiri menjadi file **`Task.class`**.
 
 ### 2. Abstraction (Abstraksi)
-**Posisi di Kode: Baris ke-84 s.d. 87 (Di dalam `class TodoList`)**
+**Posisi di Kode: Baris ke-88 s.d. 93 (Di dalam `class TodoList`)**
 ```java
 // [OOP CONCEPT: ABSTRACTION]
 private List<Task> tasks;
@@ -97,7 +97,7 @@ Melalui kelas `TodoList`, kami menyembunyikan kerumitan membaca (*load*) dan men
 *Kaitan dengan file kompilasi:* Logika terpusat ini dikompilasi menjadi **`TodoList.class`**.
 
 ### 3. Inheritance (Pewarisan)
-**Posisi di Kode: Baris ke-699 (Di dalam `class TodoGUI`)**
+**Posisi di Kode: Baris ke-711 s.d. 714 (Di dalam `class TodoGUI`)**
 ```java
 // [OOP CONCEPT: INHERITANCE]
 private static class TaskCellRenderer extends JPanel implements ListCellRenderer<Task> {
@@ -106,7 +106,7 @@ Kami tidak membuat desain kartu daftar tugas (*list item*) dari awal, melainkan 
 *Kaitan dengan file kompilasi:* Karena ini ditulis sebagai *Inner Class* (kelas di dalam kelas `TodoGUI`), Java memisahkannya dengan nama **`TodoGUI$TaskCellRenderer.class`**.
 
 ### 4. Polymorphism (Polimorfisme)
-**Posisi di Kode: Baris ke-739 (Di dalam `TaskCellRenderer`)**
+**Posisi di Kode: Baris ke-755 s.d. 760 (Di dalam `TaskCellRenderer`)**
 ```java
 // [OOP CONCEPT: POLYMORPHISM]
 @Override
@@ -115,7 +115,7 @@ public Component getListCellRendererComponent(...) {
 Java Swing secara bawaan tidak tahu cara menampilkan objek `Task`. Oleh karena itu, kami menimpa (*override*) fungsi bawaan `getListCellRendererComponent`. Saat program berjalan, fungsi kustom kami akan dipanggil secara **polimorfik** untuk menghasilkan tampilan yang dicoret saat selesai atau merah saat terlambat.
 
 ### 5. Kombinasi Lanjut: Anonymous Class (Inheritance & Polymorphism)
-**Posisi di Kode: Baris ke-336 s.d. 340**
+**Posisi di Kode: Baris ke-344 s.d. 347**
 ```java
 // [OOP CONCEPT: INHERITANCE & POLYMORPHISM]
 taskList.addMouseListener(new java.awt.event.MouseAdapter() {
