@@ -1,0 +1,14 @@
+# Compiled Java class files
+*.class
+03_bin/
+
+# Data file tugas (dibuat otomatis saat runtime)
+tasks.dat
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
